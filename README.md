@@ -1,4 +1,4 @@
-This is my personal fork of https://github.com/andrelfpinto/vim-apdl. I decided to have it in my own repository, because the official version was no longer maintained. 
+This is my personal fork of https://github.com/andrelfpinto/vim-apdl. 
 
 ## Features:
 
