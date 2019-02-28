@@ -14,8 +14,8 @@ endfunction
 " apdl file settings ---------- {{{
 augroup filetype_apdl
   autocmd!
-  autocmd FileType apdl nnoremap <buffer> <localleader>vsp 0f,l"ayt,:execute "vsp " . expand("%:p:h") . "/" . getreg('a') . ".inp"<CR><C-W><C-L>j
-  autocmd FileType apdl nnoremap <buffer> <localleader>sp 0f,l"ayt,:call PrependRegWithDirPath()<CR><C-W><C-H>:call MoveToLowestWindow()<CR>:sp<CR><C-W><C-J>:execute "e " . getreg('a') . ".inp\""<CR><C-W><C-L>j
+  autocmd FileType apdl nnoremap <buffer> <localleader>vsp 0f,lyt,:execute "vsp " . expand("%:p:h") . "/" . getreg('"') . ".inp"<CR><C-W><C-L>j
+  autocmd FileType apdl nnoremap <buffer> <localleader>sp 0f,lyt,:call PrependRegWithDirPath()<CR><C-W><C-H>:call MoveToLowestWindow()<CR>:sp<CR><C-W><C-J>:execute "e " . getreg('"') . ".inp\""<CR><C-W><C-L>j
   autocmd FileType apdl nnoremap <buffer> <localleader>c I!<esc>j
 augroup END
 " }}}
