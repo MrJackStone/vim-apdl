@@ -13,7 +13,7 @@ let b:did_indent = 1
 let s:functionWithoutEndStatement = 0
 
 setlocal indentexpr=GetApdlIndent()
-setlocal indentkeys=!,o,O,*<Return>,=~*endif,=~*enddo,=~*else,=~*elseif
+setlocal indentkeys=!,o,O,*<Return>,=~*endif,=~*enddo,=~*else,=~*elseif,=~*cfclos
 
 " Only define the function once.
 if exists("*GetApdlIndent")
@@ -30,13 +30,13 @@ function GetApdlIndent()
   endif
 
   let curind = indent(plnum)
-  " Add a 'shiftwidth' after *if, *else, *elseif, *do, *create
-  if getline(plnum) =~? '^\s*\(*if\|*do\|*else\|*elseif\|*create\|*dowhile\)\>'
+  " Add a 'shiftwidth' after *if, *else, *elseif, *do, *create, *cfopen, go2png
+  if getline(plnum) =~? '^\s*\(*if\|*do\|*else\|*elseif\|*create\|*dowhile\|*cfopen\|go2png\)\>'
     let curind = curind + &sw
   endif
 
-  " Subtract a 'shiftwidth' on a *else, *elseif, *endif, *enddo, *end
-  if getline(v:lnum) =~? '^\s*\(*else\|*elseif\|*endif\|*enddo\|*end\)\>'
+  " Subtract a 'shiftwidth' on a *else, *elseif, *endif, *enddo, *end, *cfclos, endpng
+  if getline(v:lnum) =~? '^\s*\(*else\|*elseif\|*endif\|*enddo\|*end\|*cfclos\|endpng\)\>'
     let curind = curind - &sw
   endif
 
