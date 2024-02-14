@@ -8,3 +8,7 @@ set complete-=k complete+=k
 " setlocal iskeyword+=~
 " Ignore case for autocompletion
 set ignorecase
+setlocal commentstring=!\ %s
+setlocal suffixesadd=.mac
+setlocal path+=F:\\Ferramentas\\01\\\ Code\\02\\\ APDL\\03\\\ Subroutines
+setlocal isfname-=,
