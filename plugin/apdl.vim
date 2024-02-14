@@ -1,50 +1,86 @@
-let $PATH = $PATH . ';C:\Program Files (x86)\Mozilla Firefox'
+let $PATH = $PATH . ';C:\Program Files\Mozilla Firefox'
 " define Ansys path
-let g:ansys_dir = 'C:/Program Files/ANSYS Inc/v150/'
+let g:ansys_dir = 'F:/Progfiles/ANSYS Inc/v194/'
 " Initiate a web browser (firefox) and open the documentation for a specific
 " APDL-command
 function! Browser (cmd)
-    let a:ansys_cmd = g:ansys_dir . 'commonfiles/help/en-us/help/ans_cmd/'
-    let a:ansys_ele = g:ansys_dir . 'commonfiles/help/en-us/help/ans_elem/'
-    let a:command = toupper(a:cmd)
+    let a_command     = toupper(a:cmd)
+
+    let a_ansys_cmd    = g:ansys_dir . 'commonfiles/help/en-us/help/ans_cmd/'
+    let a_ansys_ele    = g:ansys_dir . 'commonfiles/help/en-us/help/ans_elem/'
+    let a_get_function = g:ansys_dir . 'commonfiles/help/en-us/help/ans_apdl/Hlp_P_APDLget.html'
+
     try
-        let helpfile = g:apdl_cmd_dict[a:command]
-        exec ':silent !firefox.exe ' . "\"" . 'file:///' . a:ansys_cmd . helpfile . "\""
+      let helpfile = g:apdl_cmd_dict[a_command]
+      exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_ansys_cmd . helpfile . "\""
     catch
-        let helpfile = g:apdl_ele_dict[a:command]
-        exec ':silent !firefox.exe ' . "\"" . 'file:///' . a:ansys_ele . helpfile . "\""
+      try
+        let helpfile = g:apdl_ele_dict[a_command]
+        exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_ansys_ele . helpfile . "\""
+      catch
+        exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_get_function . "\""
+      endtry
     endtry
 endfunction
 
 " Function for autocompletion suggestions while calling the ApdlHelp command
 function! ApdlAutoComplete(ArgLead, CmdLine, CursorPos)
     " everything to upper case
-    let a:word = toupper(a:ArgLead)
+    let a_word = toupper(a:ArgLead)
     " count the number of letter to later get a substr to compare with
-    let a:num_letters = len(a:word)-1
+    let a_num_letters = len(a_word)-1
     " create a list from the dictionary of commands
-    let a:list_cmd = keys(g:apdl_cmd_dict)
+    let a_list_cmd = keys(g:apdl_cmd_dict)
     " filter
-    return filter(copy(a:list_cmd), 'v:val[:a:num_letters] =~ a:word')
+    return filter(copy(a_list_cmd), 'v:val[:a_num_letters] =~ a_word')
 endfunction
 "
 " Autocompletion function for the elements
 function! ApdlAutoCompleteElem(ArgLead, CmdLine, CursorPos)
     " everything to upper case
-    let a:word = toupper(a:ArgLead)
+    let a_word = toupper(a:ArgLead)
     " count the number of letter to later get a substr to compare with
-    let a:num_letters = len(a:word)-1
+    let a_num_letters = len(a_word)-1
     " create a list from the dictionary of commands
-    let a:list_ele = keys(g:apdl_ele_dict)
+    let a_list_ele = keys(g:apdl_ele_dict)
     " filter
-    return filter(copy(a:list_ele), 'v:val[:a:num_letters] =~ a:word')
+    return filter(copy(a_list_ele), 'v:val[:a_num_letters] =~ a_word')
+endfunction
+
+function! ReplaceParmsWithArgs(direction)
+  let backup_iskeyword = &iskeyword
+  let l:save = winsaveview()
+
+  setlocal iskeyword-=*
+  try
+    :execute "normal! ^f:b"
+    let before=expand('<cword>')
+    :execute "normal! ^f:w"
+    let after=expand('<cword>')
+    if a:direction > 0
+      :execute "normal! :%s/\\v<" . before . ">(!.*)@<!/" . after . "/g" . "\<cr>"
+    else
+      :execute "normal! :%s/\\v<" . after . ">(!.*)@<!/" . before . "/g" . "\<cr>"
+    endif
+  finally
+    let &l:iskeyword = backup_iskeyword
+    call winrestview(l:save)
+  endtry
+endfunction
+
+function! CompleteSpecialCommentLine(str)
+  let tw = 98
+  let reps = (tw - col("$")) / len(a:str)
+  if reps > 0
+    .s/$/\=(' '.repeat(a:str, reps))/
+  endif
+  :execute "normal! A!!" . "\<esc>"
 endfunction
 
 " Commands
 command! -nargs=1 -complete=customlist,ApdlAutoComplete ApdlCmdHelp :execute "call Browser(\"<args>\")"
 command! -nargs=1 -complete=customlist,ApdlAutoCompleteElem ApdlElemHelp :execute "call Browser(\"<args>\")"
-" mapping
-"nnoremap <leader>ap :execute "normal! viwy<cr>" . ":ApdlHelp <S-Insert>"<cr>
+command! -nargs=1 -complete=customlist,ApdlAutoCompleteElem ApdlHelp :execute "call Browser(\"<args>\")"
 
 " Dictionaries
 let g:apdl_cmd_dict = {
@@ -1545,13 +1581,13 @@ let g:apdl_ele_dict = {
             \ 'FLUID116' : '../ans_elem/Hlp_E_FLUID116.html',
             \ 'SURF151' : '../ans_elem/Hlp_E_SURF151.html',
             \ 'SURF152' : '../ans_elem/Hlp_E_SURF152.html',
-            \ 'SOLID65' : '../ans_elem/Hlp_E_SOLID65.html',
+            \ 'SOLID65' : '../ans_arch/Hlp_E_SOLID65.html',
             \ 'SURF251' : '../ans_elem/Hlp_E_SURF251.html',
             \ 'SURF252' : '../ans_elem/Hlp_E_SURF252.html',
             \ 'USER300' : '../ans_elem/Hlp_E_USER300.html',
             \ 'BEAM161' : '../ans_cmd/Hlp_C_EDLOAD.html',
-            \ 'BEAM188' : '../ans_cmd/Hlp_C_SECCONTROL.html',
-            \ 'BEAM189' : '../ans_cmd/Hlp_C_SECCONTROL.html',
+            \ 'BEAM188' : 'Hlp_E_BEAM188.html',
+            \ 'BEAM189' : 'Hlp_E_BEAM189.html',
             \ 'CIRCU124' : '../ans_cmd/Hlp_C_NSUBST.html',
             \ 'CIRCU94' : '../ans_cmd/Hlp_C_NSUBST.html',
             \ 'COMBI214' : '../ans_cmd/Hlp_C_ETABLE.html',
@@ -1686,3 +1722,4 @@ let g:apdl_ele_dict = {
             \ 'PIPE288' : 'Hlp_E_PIPE288.html',
             \ 'PIPE289' : 'Hlp_E_PIPE289.html',
             \ }
+

@@ -1,7 +1,7 @@
 " TEST Functions (for example APDL mappings)-------------------------{{{
 function! PrependRegWithDirPath()
 	:execute "let @\"='" . expand("%:p:h") . "/" . getreg('"') . "'"
-endfunction 
+endfunction
 
 function! MoveToLowestWindow()
 	let c = 1
