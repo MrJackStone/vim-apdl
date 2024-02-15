@@ -10,5 +10,5 @@ set complete-=k complete+=k
 set ignorecase
 setlocal commentstring=!\ %s
 setlocal suffixesadd=.mac
-setlocal path+=F:\\Ferramentas\\01\\\ Code\\02\\\ APDL\\03\\\ Subroutines
+setlocal path+=C:\\apdl_macros\\subroutines
 setlocal isfname-=,

@@ -1,6 +1,6 @@
 let $PATH = $PATH . ';C:\Program Files\Mozilla Firefox'
 " define Ansys path
-let g:ansys_dir = 'F:/Progfiles/ANSYS Inc/v194/'
+let g:ansys_dir = 'C:/Program Files/ANSYS Inc/v232/'
 " Initiate a web browser (firefox) and open the documentation for a specific
 " APDL-command
 function! Browser (cmd)
