@@ -10,7 +10,7 @@ function! Browser (cmd)
     let a_ansys_cmd    = a_docs_root . 'ans_cmd/'
     let a_ansys_ele    = a_docs_root . 'ans_elem/'
     let a_ansys_apdl   = a_docs_root . 'ans_apdl/'
-    let a_get_function = a_docs_root . a_ansys_apdl . 'Hlp_P_APDLget.html'
+    let a_get_function = a_ansys_apdl . 'Hlp_P_APDLget.html'
 
     try
       let helpfile = g:apdl_cmd_dict[a_command]
