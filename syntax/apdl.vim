@@ -49,6 +49,8 @@ syn match apdlFloat  display "\d[[:digit:]]*[eE][\-+]\=\d\+"
 " Floating point like number with E and decimal point (+,-)
 syn match apdlFloat  display "[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+"
 syn match apdlFloat  display "\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+"
+" Mathematical operators
+syn keyword apdlOperator + ** * - /
 syn case match
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,6 +236,9 @@ syn   match    apdlFunction   display   "/uis\>"           contained
 syn   match    apdlFunction   display   "/units\>"         contained
 syn   match    apdlFunction   display   "/wait\>"          contained
 syn   match    apdlFunction   display   "\*abbr\>"         contained
+syn   match    apdlFunction   display   "\*abcheck\>"      contained
+syn   match    apdlFunction   display   "\*abfini\>"       contained
+syn   match    apdlFunction   display   "\*abset\>"        contained
 syn   match    apdlFunction   display   "\*afun\>"         contained
 syn   match    apdlFunction   display   "\*ask\>"          contained
 syn   match    apdlFunction   display   "\*axpy\>"         contained
@@ -2146,6 +2151,7 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
   HiLink apdlNumber                Number
   HiLink apdlGetFunction           Operator
   HiLink apdlParametricFunction    Operator
+  HiLink apdlOperator              Operator
   HiLink apdlString                String
 
   HiLink apdlArgParameters         Keyword
