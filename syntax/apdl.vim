@@ -1701,9 +1701,8 @@ syn   match   apdlMacro   display   "arestore\>"             contained
 syn   match   apdlMacro   display   "argdefault\>"           contained
 syn   match   apdlMacro   display   "arr2pth\>"              contained
 syn   match   apdlMacro   display   "arr2strarr\>"           contained
-syn   match   apdlMacro   display   "arradd\>"               contained
+syn   match   apdlMacro   display   "arrput\>"               contained
 syn   match   apdlMacro   display   "arrcdr\>"               contained
-syn   match   apdlMacro   display   "arrconcat\>"            contained
 syn   match   apdlMacro   display   "arrdel\>"               contained
 syn   match   apdlMacro   display   "arrinit\>"              contained
 syn   match   apdlMacro   display   "arrjoin\>"              contained
