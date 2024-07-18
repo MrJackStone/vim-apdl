@@ -1690,8 +1690,11 @@ syn   match   apdlMacro   display   "afunbackup\>"           contained
 syn   match   apdlMacro   display   "afunrestore\>"          contained
 syn   match   apdlMacro   display   "ahelix\>"               contained
 syn   match   apdlMacro   display   "anno\>"                 contained
+syn   match   apdlMacro   display   "annocolors\>"           contained
 syn   match   apdlMacro   display   "annogrid\>"             contained
+syn   match   apdlMacro   display   "annoleg\>"              contained
 syn   match   apdlMacro   display   "annotable\>"            contained
+syn   match   apdlMacro   display   "annothkleg\>"           contained
 syn   match   apdlMacro   display   "annotxtarray\>"         contained
 syn   match   apdlMacro   display   "anrm\>"                 contained
 syn   match   apdlMacro   display   "appnd\>"                contained
@@ -1704,6 +1707,8 @@ syn   match   apdlMacro   display   "arr2strarr\>"           contained
 syn   match   apdlMacro   display   "arrput\>"               contained
 syn   match   apdlMacro   display   "arrcdr\>"               contained
 syn   match   apdlMacro   display   "arrdel\>"               contained
+syn   match   apdlMacro   display   "arrgroup\>"             contained
+syn   match   apdlMacro   display   "arrkeep\>"              contained
 syn   match   apdlMacro   display   "arrinit\>"              contained
 syn   match   apdlMacro   display   "arrjoin\>"              contained
 syn   match   apdlMacro   display   "arrlims\>"              contained
@@ -1855,6 +1860,7 @@ syn   match   apdlMacro   display   "getjname\>"             contained
 syn   match   apdlMacro   display   "getldattr\>"            contained
 syn   match   apdlMacro   display   "getndpos\>"             contained
 syn   match   apdlMacro   display   "getnpres\>"             contained
+syn   match   apdlMacro   display   "getsects\>"             contained
 syn   match   apdlMacro   display   "go2png\>"               contained
 syn   match   apdlMacro   display   "granim\>"               contained
 syn   match   apdlMacro   display   "graphanim\>"            contained
