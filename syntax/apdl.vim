@@ -1712,7 +1712,9 @@ syn   match   apdlMacro   display   "arrconcat\>"            contained
 syn   match   apdlMacro   display   "arrdel\>"               contained
 syn   match   apdlMacro   display   "arrinit\>"              contained
 syn   match   apdlMacro   display   "arrjoin\>"              contained
+syn   match   apdlMacro   display   "arrkeep\>"              contained
 syn   match   apdlMacro   display   "arrlims\>"              contained
+syn   match   apdlMacro   display   "arrput\>"               contained
 syn   match   apdlMacro   display   "arrreverse\>"           contained
 syn   match   apdlMacro   display   "arruniq\>"              contained
 syn   match   apdlMacro   display   "arxori\>"               contained
@@ -1817,8 +1819,10 @@ syn   match   apdlMacro   display   "dqy181\>"               contained
 syn   match   apdlMacro   display   "draw_ibeam\>"           contained
 syn   match   apdlMacro   display   "drawcone\>"             contained
 syn   match   apdlMacro   display   "drawpipe\>"             contained
+syn   match   apdlMacro   display   "dsbackup\>"             contained
 syn   match   apdlMacro   display   "dscalefct\>"            contained
 syn   match   apdlMacro   display   "dspndist\>"             contained
+syn   match   apdlMacro   display   "dsrestore\>"            contained
 syn   match   apdlMacro   display   "eanim\>"                contained
 syn   match   apdlMacro   display   "ebackup\>"              contained
 syn   match   apdlMacro   display   "edgerelease\>"          contained
@@ -1861,6 +1865,7 @@ syn   match   apdlMacro   display   "getjname\>"             contained
 syn   match   apdlMacro   display   "getldattr\>"            contained
 syn   match   apdlMacro   display   "getndpos\>"             contained
 syn   match   apdlMacro   display   "getnpres\>"             contained
+syn   match   apdlMacro   display   "glo2loc\>"              contained
 syn   match   apdlMacro   display   "go2png\>"               contained
 syn   match   apdlMacro   display   "granim\>"               contained
 syn   match   apdlMacro   display   "graphanim\>"            contained
@@ -1884,6 +1889,7 @@ syn   match   apdlMacro   display   "kminz\>"                contained
 syn   match   apdlMacro   display   "korient\>"              contained
 syn   match   apdlMacro   display   "krestore\>"             contained
 syn   match   apdlMacro   display   "ksort\>"                contained
+syn   match   apdlMacro   display   "l2acnt\>"               contained
 syn   match   apdlMacro   display   "larrowyz\>"             contained
 syn   match   apdlMacro   display   "lasttime\>"             contained
 syn   match   apdlMacro   display   "lbackup\>"              contained
@@ -1922,8 +1928,8 @@ syn   match   apdlMacro   display   "ndbbox\>"               contained
 syn   match   apdlMacro   display   "ndeflect\>"             contained
 syn   match   apdlMacro   display   "ndlfun\>"               contained
 syn   match   apdlMacro   display   "ndsort\>"               contained
-syn   match   apdlMacro   display   "ndstr\>"                contained
 syn   match   apdlMacro   display   "ndstr2\>"               contained
+syn   match   apdlMacro   display   "ndstr\>"                contained
 syn   match   apdlMacro   display   "nextkp\>"               contained
 syn   match   apdlMacro   display   "nextnd\>"               contained
 syn   match   apdlMacro   display   "nextreal\>"             contained
@@ -1935,6 +1941,7 @@ syn   match   apdlMacro   display   "nminy\>"                contained
 syn   match   apdlMacro   display   "nminz\>"                contained
 syn   match   apdlMacro   display   "nrestore\>"             contained
 syn   match   apdlMacro   display   "nslcomp\>"              contained
+syn   match   apdlMacro   display   "nsys\>"                 contained
 syn   match   apdlMacro   display   "num2str\>"              contained
 syn   match   apdlMacro   display   "obackup\>"              contained
 syn   match   apdlMacro   display   "oplot\>"                contained
@@ -1948,6 +1955,7 @@ syn   match   apdlMacro   display   "parverify\>"            contained
 syn   match   apdlMacro   display   "pcbackup\>"             contained
 syn   match   apdlMacro   display   "pcrestore\>"            contained
 syn   match   apdlMacro   display   "plpthenv\>"             contained
+syn   match   apdlMacro   display   "pltesys\>"              contained
 syn   match   apdlMacro   display   "posang\>"               contained
 syn   match   apdlMacro   display   "posttoolbar\>"          contained
 syn   match   apdlMacro   display   "prfsum\>"               contained
@@ -1996,8 +2004,8 @@ syn   match   apdlMacro   display   "sec_finish\>"           contained
 syn   match   apdlMacro   display   "sec_ftube\>"            contained
 syn   match   apdlMacro   display   "sec_girder\>"           contained
 syn   match   apdlMacro   display   "sec_hat\>"              contained
-syn   match   apdlMacro   display   "sec_icomp\>"            contained
 syn   match   apdlMacro   display   "sec_icomp2\>"           contained
+syn   match   apdlMacro   display   "sec_icomp\>"            contained
 syn   match   apdlMacro   display   "sec_icompinv\>"         contained
 syn   match   apdlMacro   display   "sec_init\>"             contained
 syn   match   apdlMacro   display   "sec_rail\>"             contained
