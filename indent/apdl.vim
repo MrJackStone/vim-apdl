@@ -13,7 +13,7 @@ let b:did_indent = 1
 let s:functionWithoutEndStatement = 0
 
 setlocal indentexpr=GetApdlIndent()
-setlocal indentkeys=!,o,O,*<Return>,=~*endif,=~*enddo,=~*else,=~*elseif,=~*cfclos
+setlocal indentkeys=!,o,O,*<Return>,=~*endif,=~*enddo,=~*else,=~*elseif,=~*cfclos,=~endpng
 
 " Only define the function once.
 if exists("*GetApdlIndent")
