@@ -180,6 +180,29 @@ syn   match   apdlParametricFunction   display   "\v<acos\ze\(([^,]*,){0}[^,]*\)
 syn   match   apdlParametricFunction   display   "\v<atan\ze\(([^,]*,){0}[^,]*\)"
 syn   match   apdlParametricFunction   display   "\v<atan2\ze\(([^,]*,){1}[^,]*\)"
 
+" undocumented ***inqr/iqr functions
+syn   match   apdlParametricFunction   display   "\v<erinqr\ze\(([^,]*,){0}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<meminqr\ze\(([^,]*,){0}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<ndinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<elmiqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<kpinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<lsinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<arinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<vlinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<rlinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<gapiqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<masiqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<ceinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<cpinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<csyiqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<etyiqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<foriqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<sectinqr\ze\(([^,]*,){1}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<mpinqr\ze\(([^,]*,){2}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<arliqr\ze\(([^,]*,){2}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<dget\ze\(([^,]*,){2}[^,]*\)"
+syn   match   apdlParametricFunction   display   "\v<fget\ze\(([^,]*,){2}[^,]*\)"
+
 " normal apdl commands
 " autoextracted from a few files of the ANSYS 15 html documentation
 syn   match 	 apdlFunction   display   "\*create\>"       contained
