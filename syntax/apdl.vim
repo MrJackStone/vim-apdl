@@ -2143,6 +2143,20 @@ syn match	apdlUnknown	display "debug\>" contained
 syn match	apdlUnknown	display "/opt\>" contained
 syn match	apdlUnknown	display "/runst\>" contained
 
+" block commands (CDWRITE):
+syn match	apdlUnknown	display "/bfblock\>" contained
+syn match apdlUnknown display "/bfeblock\>" contained
+syn match apdlUnknown display "/cmblock\>" contained
+syn match apdlUnknown display "/dblock\>" contained
+syn match apdlUnknown display "/eblock\>" contained
+syn match apdlUnknown display "/etblock\>" contained
+syn match apdlUnknown display "/fblock\>" contained
+syn match apdlUnknown display "/nblock\>" contained
+syn match apdlUnknown display "/*pread\>" contained
+syn match apdlUnknown display "/rlblock\>" contained
+syn match apdlUnknown display "/secblock\>" contained
+syn match apdlUnknown display "/sfeblock\>" contained
+
 " anything after /eof
 syn region apdlInaccessible start="^" end="%$" contained
 " syn match apdlEofLine ".*" contained nextgroup=apdlInaccessible transparent skipnl

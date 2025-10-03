@@ -10,6 +10,7 @@ function! Browser (cmd)
     let a_ansys_cmd    = a_docs_root . 'ans_cmd/'
     let a_ansys_ele    = a_docs_root . 'ans_elem/'
     let a_ansys_apdl   = a_docs_root . 'ans_apdl/'
+    let a_ansys_prog   = a_docs_root . 'ans_prog/'
     let a_get_function = a_ansys_apdl . 'Hlp_P_APDLget.html'
 
     try
@@ -21,14 +22,19 @@ function! Browser (cmd)
         exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_ansys_ele . helpfile . "\""
       catch
         try
-          let helpfile = g:apdl_apdl_dict[a_command]
-          exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_ansys_apdl . helpfile . "\""
+          let helpfile = g:apdl_block_dict[a_command]
+          exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_ansys_prog . helpfile . "\""
         catch
-          exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_get_function . "\""
+          try
+            let helpfile = g:apdl_apdl_dict[a_command]
+            exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_ansys_apdl . helpfile . "\""
+          catch
+            exec ':silent !firefox.exe ' . "\"" . 'file:///' . a_get_function . "\""
+          endtry
         endtry
       endtry
     endtry
-endfunction
+  endfunction
 
 " Function for autocompletion suggestions while calling the ApdlHelp command
 function! ApdlAutoComplete(ArgLead, CmdLine, CursorPos)
@@ -1735,4 +1741,19 @@ let g:apdl_apdl_dict = {
             \ '*ABSET'   : 'Hlp_P_APDL5_4.html',
             \ '*ABCHECK' : 'Hlp_P_APDL5_4.html',
             \ '*ABFINI'  : 'Hlp_P_APDL5_4.html',
+            \ }
+
+let g:apdl_block_dict = {
+            \ 'BFBLOCK'  : 'Hlp_P_INT3_3.html',
+            \ 'BFEBLOCK' : 'Hlp_P_INT3_3.html',
+            \ 'CMBLOCK'  : 'Hlp_P_INT3_3.html',
+            \ 'DBLOCK'   : 'Hlp_P_INT3_3.html',
+            \ 'EBLOCK'   : 'Hlp_P_INT3_3.html',
+            \ 'ETBLOCK'  : 'Hlp_P_INT3_3.html',
+            \ 'FBLOCK'   : 'Hlp_P_INT3_3.html',
+            \ 'NBLOCK'   : 'Hlp_P_INT3_3.html',
+            \ '*PREAD'   : 'Hlp_P_INT3_3.html',
+            \ 'RLBLOCK'  : 'Hlp_P_INT3_3.html',
+            \ 'SECBLOCK' : 'Hlp_P_INT3_3.html',
+            \ 'SFEBLOCK' : 'Hlp_P_INT3_3.html',
             \ }
